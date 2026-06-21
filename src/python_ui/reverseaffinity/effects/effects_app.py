@@ -16,6 +16,7 @@ class EffectsMainWindow(QMainWindow):
         self.setMaximumSize(screen.width(), screen.height())
         self.showMaximized()
 
+        self.menuBar().setNativeMenuBar(False)
         mbar = self.menuBar()
         file_m = mbar.addMenu(_("&File"))
         file_m.addAction(self._action(_("&New Composition"), self.new_comp, "Ctrl+N"))
