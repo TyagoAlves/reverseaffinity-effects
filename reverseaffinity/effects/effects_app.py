@@ -12,11 +12,9 @@ class EffectsMainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle(_("reverseaffinity Effects - [Untitled Composition]"))
         screen = QApplication.primaryScreen().availableGeometry()
-        max_w = min(int(screen.width() * 0.75), screen.width())
-        max_h = min(int(screen.height() * 0.8), screen.height())
-        self.resize(min(max_w, 1400), min(max_h, 900))
+        self.setMinimumSize(800, 500)
         self.setMaximumSize(screen.width(), screen.height())
-        apply_dark_theme(self)
+        self.showMaximized()
 
         mbar = self.menuBar()
         file_m = mbar.addMenu(_("&File"))
